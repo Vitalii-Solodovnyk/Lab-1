@@ -16,3 +16,13 @@ Podaj kurs USD/PLN (np. 4.25): 4.25
 
 gcc -Wall src/main.c -o konwerter.exe
 
+
+### Kod Mermaid
+flowchart TD
+    A[Start] --> B[Wczytaj amountPLN]
+    B --> C[Wczytaj kurs USD/PLN]
+    C --> D{Czy oba odczyty poprawne?}
+    D -- Nie --> E[Drukuj błąd i Stop]
+    D -- Tak --> F[Oblicz amountUSD = amountPLN / rate]
+    F --> G[Wyświetl wynik]
+    G --> H[Stop]
