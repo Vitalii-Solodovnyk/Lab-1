@@ -14,3 +14,13 @@ Podaj marze w procentach (np. 30): 30
 Cena sprzedazy = 260.000000
 
 gcc -Wall src/main.c -o konwerter.exe
+
+
+flowchart TD
+    A[Start] --> B[Wczytaj purchaseNet]
+    B --> C[Wczytaj marginPercent]
+    C --> D{Czy oba odczyty poprawne?}
+    D -- Nie --> E[Drukuj błąd i Stop]
+    D -- Tak --> F[Oblicz sellingPrice = purchaseNet * (1 + marginPercent / 100)]
+    F --> G[Wyświetl sellingPrice]
+    G --> H[Stop]
